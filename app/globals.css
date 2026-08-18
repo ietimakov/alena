@@ -106,3 +106,15 @@ main{overflow:clip}
   .port{left:auto;right:calc(66.5% + var(--hero-word-gap))}
   .folio{right:auto;left:calc(66.5% + var(--hero-word-gap))}
 }
+
+/* Animated hand-drawn contact underline and active contact links. */
+.contact-title{display:inline-grid;justify-items:center;position:relative}
+.contact-underline{position:relative;width:92%;height:22px;margin-top:8px;color:#fff}
+.contact-underline:before{content:"";position:absolute;left:0;right:0;top:6px;height:11px;background:linear-gradient(135deg,transparent 43%,currentColor 45% 55%,transparent 57%) 0 0/14px 11px repeat-x,linear-gradient(45deg,transparent 43%,currentColor 45% 55%,transparent 57%) 7px 0/14px 11px repeat-x;animation:contactZigzag 3.2s ease-in-out infinite}
+.contact-underline svg{position:absolute;z-index:2;left:-10px;top:-7px;width:25px;height:25px;filter:drop-shadow(0 2px 1px rgba(0,0,0,.18));animation:contactBrush 3.2s ease-in-out infinite}
+@keyframes contactZigzag{0%,8%{clip-path:inset(0 100% 0 0);opacity:1}68%,84%{clip-path:inset(0 0 0 0);opacity:1}100%{clip-path:inset(0 0 0 0);opacity:0}}
+@keyframes contactBrush{0%,8%{left:-10px;opacity:0;transform:rotate(-28deg)}13%{opacity:1}68%,84%{left:calc(100% - 12px);opacity:1;transform:rotate(-12deg)}100%{left:calc(100% - 12px);opacity:0;transform:rotate(-12deg)}}
+.contacts a{display:flex;align-items:center;gap:12px;white-space:nowrap;color:var(--text-main);text-decoration:none;transition:color .2s ease,transform .2s ease}
+.contacts a:hover{color:var(--bg-olive);transform:translateY(-2px)}
+.contacts a:focus-visible{outline:2px solid var(--bg-olive);outline-offset:6px}
+@media(prefers-reduced-motion:reduce){.contact-underline:before{animation:none;clip-path:none;opacity:1}.contact-underline svg{animation:none;left:calc(100% - 12px);opacity:1;transform:rotate(-12deg)}}
