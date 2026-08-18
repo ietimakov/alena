@@ -47,7 +47,10 @@ export function Hero() {
   return <section className="hero hero-animated">
     <div className="vine">⌇﹏⌇﹏⌇﹏⌇</div>
     <div className="hero-title port">PORT<span>PORT</span></div>
-    <img className="portrait-flourish" src={assetPath("images/decor/portrait-flourish.png")} alt="" aria-hidden="true" />
+    <div className="portrait-flourish" aria-hidden="true">
+      <img className="flourish-vertical" src={assetPath("images/decor/portrait-flourish.png")} alt="" />
+      <img className="flourish-tail" src={assetPath("images/decor/portrait-flourish.png")} alt="" />
+    </div>
     <div className="portrait-wrap"><img src={assetPath("images/artist/alena-ursova.jpg")} alt="Алёна Урсова" /></div>
     <div className="hero-title folio">FOLIO<span>FOLIO</span></div>
     <div className={`signature typewriter ${typedName ? "has-content" : ""}`} aria-label={name}>
