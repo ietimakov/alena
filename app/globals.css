@@ -99,3 +99,9 @@ body,.contacts,.hero-title,.signature,.work-heading,.catalog-work h3,.contact-di
 
 /* `clip` keeps decorative overflow hidden without breaking sticky sections. */
 main{overflow:clip}
+
+/* Keep display words anchored to the portrait on wide screens. */
+@media(min-width:901px){
+  .port{left:auto;right:calc(66.5% + 22px)}
+  .folio{right:auto;left:calc(66.5% + 22px)}
+}
