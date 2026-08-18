@@ -91,3 +91,6 @@ body,.contacts,.hero-title,.signature,.work-heading,.catalog-work h3,.contact-di
   .contact{z-index:5}
 }
 @media(prefers-reduced-motion:reduce){.story{position:relative;top:auto;box-shadow:none}}
+
+/* `clip` keeps decorative overflow hidden without breaking sticky sections. */
+main{overflow:clip}
