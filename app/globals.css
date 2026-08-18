@@ -72,3 +72,6 @@ body,.contacts,.hero-title,.signature,.work-heading,.catalog-work h3,.contact-di
 .signature>span{display:block;min-width:0}
 @media(max-width:900px){.portrait-flourish{top:190px;left:calc(29% - 48px);width:260px;height:455px}.signature{gap:25px}.signature .name-arc{width:32px;height:64px}}
 @media(max-width:560px){.portrait-flourish{top:185px;left:calc(18% - 38px);width:220px;height:430px}.signature{gap:14px}.signature .name-arc{width:25px;height:50px}}
+
+@font-face{font-family:"Rochelle";src:url('/fonts/rochelle.otf') format('opentype');font-style:normal;font-weight:400;font-display:swap}
+.hero-title,.contact-disc h2{font-family:"Rochelle","Dita Sweet",serif}
