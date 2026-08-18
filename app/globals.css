@@ -102,6 +102,7 @@ main{overflow:clip}
 
 /* Keep display words anchored to the portrait on wide screens. */
 @media(min-width:901px){
-  .port{left:auto;right:calc(66.5% + 22px)}
-  .folio{right:auto;left:calc(66.5% + 22px)}
+  .hero{--hero-word-gap:2px}
+  .port{left:auto;right:calc(66.5% + var(--hero-word-gap))}
+  .folio{right:auto;left:calc(66.5% + var(--hero-word-gap))}
 }
