@@ -93,7 +93,8 @@ body,.contacts,.hero-title,.signature,.work-heading,.catalog-work h3,.contact-di
   .acquaintance{z-index:2}
   .geese{z-index:3}
   .shadows{z-index:4}
-  .contact{z-index:5}
+  .ammonite{z-index:5}
+  .contact{z-index:6}
 }
 @media(prefers-reduced-motion:reduce){.story{position:relative;top:auto;box-shadow:none}}
 
@@ -118,3 +119,20 @@ main{overflow:clip}
 .contacts a:hover{color:var(--bg-olive);transform:translateY(-2px)}
 .contacts a:focus-visible{outline:2px solid var(--bg-olive);outline-offset:6px}
 @media(prefers-reduced-motion:reduce){.contact-underline:before{animation:none;transform:none;opacity:1}.contact-underline svg{animation:none;left:calc(100% - 12px);opacity:1;transform:rotate(-12deg)}}
+
+/* Five-work catalog and the Ammonite portfolio sheet. */
+@media(min-width:901px){
+  .catalog{height:auto;padding-bottom:90px}
+  .catalog-grid{grid-template-columns:repeat(6,minmax(0,1fr));column-gap:3%;row-gap:56px}
+  .catalog-work{grid-column:span 2}
+  .catalog-work:nth-child(4){grid-column:2/span 2}
+  .catalog-work:nth-child(5){grid-column:4/span 2}
+  .ammonite{height:1220px;top:clamp(-300px,calc(100vh - 1220px),0px)}
+  .ammonite .top-left{width:39%}
+  .ammonite .details{margin-bottom:48px!important}
+  .ammonite-art{right:9.5%;top:185px;width:36%;height:350px}
+  .ammonite-interior-dark{left:9.5%;bottom:245px;width:40%;height:350px}
+  .ammonite-copy-right{right:9.5%;top:565px;width:40%}
+  .ammonite-copy-bottom{left:9.5%;bottom:65px;width:35%}
+  .ammonite-interior-light{right:9.5%;bottom:65px;width:36%;height:270px}
+}
