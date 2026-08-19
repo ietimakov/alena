@@ -137,9 +137,30 @@ main{overflow:clip}
   .ammonite-interior-light{right:9.5%;bottom:65px;width:36%;height:270px}
 }
 
-/* A framed canvas keeps the composition stable on extra-wide displays. */
-body{background:#d9d7d1}
-main{width:100%;max-width:1366px;margin-inline:auto}
+/* Keep the composition framed, while every section background spans the viewport. */
+body{background:var(--bg-light);overflow-x:clip}
+main{width:100%;max-width:1366px;margin-inline:auto;overflow:visible}
+.hero,.catalog,.story,.contact{isolation:isolate;background:transparent}
+.hero{--section-bg:var(--bg-light)}
+.catalog,.story-olive{--section-bg:var(--bg-olive)}
+.story-light{--section-bg:#f7f7f4}
+.story-warm{--section-bg:var(--bg-warm)}
+.contact{--section-bg:#f3f3f3}
+.hero:before,.catalog:before,.story:before,.contact:before{
+  content:"";
+  position:absolute;
+  inset:0 auto 0 50%;
+  width:100vw;
+  background:var(--section-bg);
+  transform:translateX(-50%);
+  z-index:-1;
+  pointer-events:none;
+}
+.catalog{position:relative}
+.hero:before{
+  border-bottom-left-radius:50% 27%;
+  border-bottom-right-radius:50% 27%;
+}
 
 /* Compact portfolio sheets: slightly shorter than the viewport. */
 @media(min-width:901px){
@@ -174,6 +195,10 @@ main{width:100%;max-width:1366px;margin-inline:auto}
 
 @media(max-width:560px){
   .hero{
+    border-bottom-left-radius:50% 14%;
+    border-bottom-right-radius:50% 14%;
+  }
+  .hero:before{
     border-bottom-left-radius:50% 14%;
     border-bottom-right-radius:50% 14%;
   }
