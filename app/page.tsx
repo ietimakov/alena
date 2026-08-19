@@ -1,4 +1,4 @@
-import { FaInstagram, FaPaintBrush, FaTelegramPlane, FaWhatsapp } from "react-icons/fa";
+import { FaPaintBrush, FaTelegramPlane, FaWhatsapp } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { ArtworkActions } from "./ArtworkActions";
 import { Hero } from "./Hero";
@@ -27,5 +27,5 @@ export default function Home() { return <main>
     <div className="story-copy ammonite-copy-bottom"><p className="dropcap">Эта работа приглашает замедлиться и почувствовать: время не движется только вперёд — оно разворачивается по спирали. Мы возвращаемся к похожим событиям, но каждый раз воспринимаем их глубже, потому что изменились сами.</p></div>
     <img className="interior ammonite-interior-light" src={assetPath("images/interiors/ammonit-light.jpg")} alt="Аммонит в светлом интерьере"/>
   </section>
-  <footer className="contact"><div className="contact-disc"><div className="vine small">⌇﹏⌇﹏⌇﹏⌇</div><div className="contact-title"><h2>CONTACT ME</h2><div className="contact-underline" aria-hidden="true"><FaPaintBrush/></div></div></div><div className="contacts"><a href="mailto:ursova.al@mail.ru" aria-label="Написать Алёне по электронной почте"><MdOutlineEmail aria-hidden="true"/>ursova.al@mail.ru</a><a href="https://wa.me/79613698369" target="_blank" rel="noreferrer" aria-label="Написать Алёне в WhatsApp"><FaWhatsapp aria-hidden="true"/>8(961)369-8-369</a><a href="https://t.me/Alena_Ursova" target="_blank" rel="noreferrer" aria-label="Написать Алёне в Telegram"><FaTelegramPlane aria-hidden="true"/>@Alena_Ursova</a><a href="https://instagram.com/alena_ursova_" target="_blank" rel="noreferrer" aria-label="Открыть Instagram Алёны"><FaInstagram aria-hidden="true"/>alena_ursova_</a></div></footer>
+  <footer className="contact"><div className="contact-disc"><div className="vine small">⌇﹏⌇﹏⌇﹏⌇</div><div className="contact-title"><h2>CONTACT ME</h2><div className="contact-underline" aria-hidden="true"><FaPaintBrush/></div></div></div><div className="contacts"><a href="mailto:ursova.al@mail.ru" aria-label="Написать Алёне по электронной почте"><MdOutlineEmail aria-hidden="true"/>ursova.al@mail.ru</a><a href="https://wa.me/79613698369" target="_blank" rel="noreferrer" aria-label="Написать Алёне в WhatsApp"><FaWhatsapp aria-hidden="true"/>8(961)369-8-369</a><a href="https://t.me/Alena_Ursova" target="_blank" rel="noreferrer" aria-label="Написать Алёне в Telegram"><FaTelegramPlane aria-hidden="true"/>@Alena_Ursova</a></div></footer>
 </main>; }

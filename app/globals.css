@@ -136,3 +136,54 @@ main{overflow:clip}
   .ammonite-copy-bottom{left:9.5%;bottom:65px;width:35%}
   .ammonite-interior-light{right:9.5%;bottom:65px;width:36%;height:270px}
 }
+
+/* A framed canvas keeps the composition stable on extra-wide displays. */
+body{background:#d9d7d1}
+main{width:100%;max-width:1366px;margin-inline:auto}
+
+/* Compact portfolio sheets: slightly shorter than the viewport. */
+@media(min-width:901px){
+  .story,.tenderness,.acquaintance,.geese,.shadows,.ammonite{
+    height:clamp(860px,90vh,990px);
+    top:5vh;
+    padding-block:55px;
+    font-size:17px;
+  }
+  .story-copy p{margin-bottom:18px}
+  .top-left,.top-right{top:55px}
+  .bottom-left,.bottom-right{bottom:55px}
+  .work-heading{font-size:38px}
+  .details{font-size:22px;margin-bottom:42px!important}
+  .art.tall{height:520px}
+  .art.wide{height:360px}
+  .right-art{top:130px}
+  .left-art{top:135px;height:520px}
+  .left-interior{bottom:55px;height:320px}
+  .right-interior{bottom:55px;height:360px}
+  .top-interior{top:190px;height:320px}
+  .bottom-art{bottom:55px}
+  .ammonite-art{top:145px;height:290px}
+  .ammonite-interior-dark{bottom:205px;height:290px}
+  .ammonite-copy-right{top:455px}
+  .ammonite-copy-bottom{bottom:45px}
+  .ammonite-interior-light{bottom:45px;height:220px}
+}
+
+/* Three remaining contact links form one centered group. */
+.contacts{justify-content:center;gap:clamp(44px,7vw,110px)}
+
+@media(max-width:560px){
+  .hero{
+    border-bottom-left-radius:50% 14%;
+    border-bottom-right-radius:50% 14%;
+  }
+  .intro{width:84%;max-width:430px;padding-inline:8px}
+  .contacts{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:22px;
+    padding-inline:20px;
+  }
+}
