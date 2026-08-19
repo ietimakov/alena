@@ -162,32 +162,56 @@ main{width:100%;max-width:1366px;margin-inline:auto;overflow:visible}
   border-bottom-right-radius:50% 27%;
 }
 
-/* Compact portfolio sheets: slightly shorter than the viewport. */
+/* Compact portfolio sheets with a collision-free two-column composition. */
 @media(min-width:901px){
   .story,.tenderness,.acquaintance,.geese,.shadows,.ammonite{
     height:clamp(860px,90vh,990px);
-    top:5vh;
-    padding-block:55px;
-    font-size:17px;
+    top:0;
+    margin-bottom:10vh;
+    padding:34px 9.5%;
+    font-size:15px;
   }
-  .story-copy p{margin-bottom:18px}
-  .top-left,.top-right{top:55px}
-  .bottom-left,.bottom-right{bottom:55px}
-  .work-heading{font-size:38px}
-  .details{font-size:22px;margin-bottom:42px!important}
-  .art.tall{height:520px}
-  .art.wide{height:360px}
-  .right-art{top:130px}
-  .left-art{top:135px;height:520px}
-  .left-interior{bottom:55px;height:320px}
-  .right-interior{bottom:55px;height:360px}
-  .top-interior{top:190px;height:320px}
-  .bottom-art{bottom:55px}
-  .ammonite-art{top:145px;height:290px}
-  .ammonite-interior-dark{bottom:205px;height:290px}
-  .ammonite-copy-right{top:455px}
-  .ammonite-copy-bottom{bottom:45px}
-  .ammonite-interior-light{bottom:45px;height:220px}
+  .story:before{bottom:-10vh}
+  .story{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    grid-template-rows:minmax(0,1.45fr) minmax(0,1fr);
+    column-gap:6%;
+    row-gap:24px;
+  }
+  .story>.story-copy,.story>.art,.story>.interior{
+    position:relative;
+    inset:auto;
+    width:100%!important;
+    height:100%!important;
+    min-width:0;
+    min-height:0;
+  }
+  .story>.art,.story>.interior{object-fit:cover}
+  .story-copy{line-height:1.08}
+  .story-copy p{margin-bottom:12px}
+  .work-heading{font-size:35px}
+  .heading-rule{margin-bottom:16px}
+  .details{font-size:20px;margin-bottom:22px!important}
+  .dropcap:first-letter{font-size:62px}
+  .top-left,.left-art,.top-interior{grid-column:1;grid-row:1}
+  .top-right,.right-art{grid-column:2;grid-row:1}
+  .bottom-left,.left-interior{grid-column:1;grid-row:2}
+  .bottom-right,.right-interior,.bottom-art{grid-column:2;grid-row:2}
+
+  .ammonite{
+    grid-template-rows:minmax(0,1.45fr) minmax(0,1fr) minmax(0,.9fr);
+    row-gap:18px;
+    font-size:13.5px;
+  }
+  .ammonite .top-left{grid-column:1;grid-row:1}
+  .ammonite-art{grid-column:2;grid-row:1}
+  .ammonite-interior-dark{grid-column:1;grid-row:2}
+  .ammonite-copy-right{grid-column:2;grid-row:2}
+  .ammonite-copy-bottom{grid-column:1;grid-row:3}
+  .ammonite-interior-light{grid-column:2;grid-row:3}
+  .ammonite .details{margin-bottom:14px!important}
+  .ammonite .story-copy p{margin-bottom:8px}
 }
 
 /* Three remaining contact links form one centered group. */
@@ -204,6 +228,11 @@ main{width:100%;max-width:1366px;margin-inline:auto;overflow:visible}
   }
   .intro{width:84%;max-width:430px;padding-inline:8px}
   .contacts{
+    position:absolute;
+    top:300px;
+    left:50%;
+    transform:translateX(-50%);
+    width:100%;
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -211,4 +240,10 @@ main{width:100%;max-width:1366px;margin-inline:auto;overflow:visible}
     gap:22px;
     padding-inline:20px;
   }
+  .contact{height:590px;padding-top:0}
+  .contact-disc{top:0;width:420px;height:580px;padding-top:105px}
+  .contact-disc .vine{top:20px;left:50%;color:#fff}
+  .contact-disc h2{color:#fff}
+  .contacts a{color:#fff}
+  .contacts a:hover{color:#fff}
 }
