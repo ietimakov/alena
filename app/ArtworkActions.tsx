@@ -53,7 +53,7 @@ export function ArtworkActions({ work }: { work: Artwork }) {
       `Контакт: ${data.get("contact")}`,
       data.get("comment") ? `Комментарий: ${data.get("comment")}` : "",
     ].filter(Boolean).join("\n");
-    window.open(`https://wa.me/79613698369?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+    window.open(`https://t.me/Alena_Ursova?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
     setSubmitted(true);
   };
 
@@ -84,11 +84,11 @@ export function ArtworkActions({ work }: { work: Artwork }) {
           <div className="booking-summary"><img src={work.image} alt=""/><div><span>{work.size}</span><strong>{work.price}</strong></div></div>
           <form onSubmit={submitBooking}>
             <label>Ваше имя<input name="name" autoComplete="name" required placeholder="Как к вам обращаться"/></label>
-            <label>Телефон или ник в мессенджере<input name="contact" autoComplete="tel" required placeholder="+7 900 000-00-00 или @username"/></label>
+            <label>Телефон или ник в Telegram<input name="contact" autoComplete="tel" required placeholder="+7 900 000-00-00 или @username"/></label>
             <label>Комментарий<textarea name="comment" rows={3} placeholder="Доставка, оформление или другой вопрос"/></label>
-            <button className="modal-primary" type="submit">Продолжить в WhatsApp</button>
+            <button className="modal-primary" type="submit">Продолжить в Telegram</button>
             <p className="booking-note">Откроется чат с Алёной и готовым текстом заявки. Сообщение отправляете вы.</p>
-            {submitted && <p className="booking-status" role="status">Заявка подготовлена в WhatsApp.</p>}
+            {submitted && <p className="booking-status" role="status">Заявка подготовлена в Telegram.</p>}
           </form>
         </div>}
       </section>
