@@ -252,3 +252,25 @@ main{width:100%;max-width:1366px;margin-inline:auto;overflow:visible}
 }
 
 @media(max-width:900px){.story-column{display:contents}}
+
+/* More compact introduction and taller PDF-like catalog arches. */
+@media(min-width:901px){
+  .hero{height:1000px}
+  .intro{top:780px}
+  .catalog-grid{max-width:1100px;margin-inline:auto}
+  .catalog-work{height:760px;grid-template-rows:435px 170px 155px}
+  .catalog-work img{height:435px}
+}
+
+@media(min-width:561px) and (max-width:900px){
+  .intro{top:680px}
+  .catalog-work{height:710px;grid-template-rows:410px 150px 150px}
+  .catalog-work img{height:410px}
+}
+
+@media(max-width:560px){
+  .hero{height:1000px}
+  .intro{top:680px}
+  .catalog-work{height:740px;grid-template-rows:440px 150px 150px}
+  .catalog-work img{height:440px}
+}

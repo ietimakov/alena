@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { assetPath } from "./assetPath";
 
 const name = "Алёна Урсова";
-const roles = "Художник\nДизайнер\nМаркетолог";
 const intro = `Объединяющий творчество, эстетику и глубокое понимание визуального восприятия.
 В живопись я пришла по зову души. Я самоучка, и именно это позволило мне сохранить
 свободу самовыражения, интуитивный подход и уникальный авторский стиль.
@@ -41,8 +40,7 @@ function useTypedText(text: string, startAt: number, duration: number) {
 
 export function Hero() {
   const typedName = useTypedText(name, 4450, 520);
-  const typedRoles = useTypedText(roles, 4950, 620);
-  const typedIntro = useTypedText(intro, 5500, 1700);
+  const typedIntro = useTypedText(intro, 5000, 1700);
 
   return <section className="hero hero-animated">
     <div className="vine">⌇﹏⌇﹏⌇﹏⌇</div>
@@ -58,7 +56,6 @@ export function Hero() {
       <span>{typedName}{typedName.length > 0 && typedName.length < name.length && <i aria-hidden="true" />}</span>
       {typedName && <img className="name-arc" src={assetPath("images/decor/name-arc-right.png")} alt="" aria-hidden="true" />}
     </div>
-    <div className="roles typewriter" aria-label={roles}>{typedRoles}{typedRoles.length > 0 && typedRoles.length < roles.length && <i aria-hidden="true" />}</div>
     <p className="intro typewriter" aria-label={intro}>{typedIntro}{typedIntro.length > 0 && typedIntro.length < intro.length && <i aria-hidden="true" />}</p>
   </section>;
 }
