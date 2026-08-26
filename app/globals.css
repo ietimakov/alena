@@ -311,3 +311,14 @@ body,button,input,textarea,select,
 .booking-content input,.booking-content textarea{
   font-family:"Calibri Local",Calibri,Arial,sans-serif;
 }
+
+/* Increase the introductory artist statement by exactly 3pt. */
+@media(min-width:901px){
+  .hero .intro{width:900px;max-width:calc(100% - 80px);font-size:18px;line-height:1.2}
+}
+@media(min-width:561px) and (max-width:900px){
+  .hero .intro{width:90%;font-size:16px;line-height:1.2}
+}
+@media(max-width:560px){
+  .hero .intro{top:675px;width:90%;font-size:18px;line-height:1.18}
+}
