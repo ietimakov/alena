@@ -274,3 +274,36 @@ main{width:100%;max-width:1366px;margin-inline:auto;overflow:visible}
   .catalog-work{height:740px;grid-template-rows:440px 150px 150px}
   .catalog-work img{height:440px}
 }
+
+/* Final typography: MTCORSVA in the hero, Calibri throughout the site. */
+@font-face{
+  font-family:"MTCORSVA";
+  src:url('/fonts/mtcorsva.ttf') format('truetype');
+  font-style:normal;
+  font-weight:400;
+  font-display:swap;
+}
+@font-face{
+  font-family:"Calibri Local";
+  src:url('/fonts/calibri.ttf') format('truetype');
+  font-style:normal;
+  font-weight:400;
+  font-display:swap;
+}
+@font-face{
+  font-family:"Calibri Local";
+  src:url('/fonts/calibri_bold.ttf') format('truetype');
+  font-style:normal;
+  font-weight:700;
+  font-display:swap;
+}
+body,button,input,textarea,select,
+.contacts,.work-heading,.catalog-work h3,.contact-disc h2{
+  font-family:"Calibri Local",Calibri,Arial,sans-serif;
+}
+.hero .signature,.hero .intro{
+  font-family:"MTCORSVA","Times New Roman",serif;
+}
+.hero-title{
+  font-family:"Rochelle","Dita Sweet",serif;
+}
