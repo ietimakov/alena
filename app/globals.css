@@ -307,3 +307,7 @@ body,button,input,textarea,select,
 .hero-title{
   font-family:"Rochelle","Dita Sweet",serif;
 }
+.catalog-actions button,.modal-tabs button,.modal-primary,.modal-close,
+.booking-content input,.booking-content textarea{
+  font-family:"Calibri Local",Calibri,Arial,sans-serif;
+}
