@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Алёна Урсова — первый экран</title>
+  <style>
+    @font-face {
+      font-family: "Rochelle";
+      src: url("../../fonts/rochelle.otf") format("opentype");
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "MTCORSVA";
+      src: url("../../fonts/mtcorsva.ttf") format("truetype");
+      font-display: swap;
+    }
+
+    :root {
+      color-scheme: light;
+      --paper: #f3f1ed;
+      --ink: #181713;
+      --olive: #858b7c;
+      --portrait-left: 33.5%;
+      --portrait-width: 33%;
+      --word-gap: 2px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html,
+    body {
+      margin: 0;
+      min-width: 320px;
+      overflow-x: clip;
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    body { font-family: "MTCORSVA", "Times New Roman", serif; }
+
+    .embed-hero {
+      position: relative;
+      width: 100%;
+      max-width: 1366px;
+      height: 1000px;
+      margin-inline: auto;
+      overflow: hidden;
+      text-align: center;
+      background: var(--paper);
+      border-bottom-left-radius: 50% 27%;
+      border-bottom-right-radius: 50% 27%;
+    }
+
+    .embed-hero::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 0 50% -1px;
+      width: 100vw;
+      transform: translateX(-50%);
+      background: var(--paper);
+    }
+
+    .vine {
+      position: absolute;
+      z-index: 4;
+      top: 48px;
+      left: calc(50% + 18px);
+      width: 430px;
+      height: 58px;
+      transform: translateX(-50%);
+      background: url("../../images/decor/vine.png") center / contain no-repeat;
+    }
+
+    .portrait-wrap {
+      position: absolute;
+      z-index: 2;
+      top: 135px;
+      left: var(--portrait-left);
+      width: var(--portrait-width);
+      height: 505px;
+      overflow: hidden;
+      border-radius: 48% 48% 5% 5% / 35% 35% 4% 4%;
+    }
+
+    .portrait-wrap img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-title {
+      position: absolute;
+      z-index: 3;
+      top: 245px;
+      font-family: "Rochelle", Didot, serif;
+      font-size: clamp(118px, 12.6vw, 172px);
+      font-weight: 400;
+      line-height: .8;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .hero-title span {
+      position: absolute;
+      z-index: -1;
+      top: 32px;
+      left: 18px;
+      color: transparent;
+      -webkit-text-stroke: 1px #555;
+    }
+
+    .port { right: calc(66.5% + var(--word-gap)); }
+    .folio { left: calc(66.5% + var(--word-gap)); }
+
+    .portrait-flourish {
+      position: absolute;
+      z-index: 1;
+      top: 200px;
+      left: calc(var(--portrait-left) - 58px);
+      width: 300px;
+      height: 520px;
+      pointer-events: none;
+    }
+
+    .portrait-flourish img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+      mix-blend-mode: multiply;
+    }
+
+    .signature {
+      position: absolute;
+      top: 690px;
+      left: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 34px;
+      transform: translateX(-50%);
+      font-size: 48px;
+      white-space: nowrap;
+    }
+
+    .signature .name-arc {
+      display: block;
+      width: 38px;
+      height: 76px;
+      flex: none;
+      object-fit: fill;
+      mix-blend-mode: multiply;
+    }
+
+    .intro {
+      position: absolute;
+      top: 780px;
+      left: 50%;
+      width: 900px;
+      max-width: calc(100% - 80px);
+      margin: 0;
+      transform: translateX(-50%);
+      font-size: 18px;
+      line-height: 1.2;
+      white-space: pre-line;
+    }
+
+    .type-caret {
+      display: inline-block;
+      width: 1px;
+      height: .78em;
+      margin-left: 3px;
+      background: currentColor;
+      vertical-align: baseline;
+      animation: type-caret .55s step-end infinite;
+    }
+
+    .embed-hero.is-animated .vine,
+    .embed-hero.is-animated .portrait-wrap {
+      transform-origin: center;
+      animation: zoom-out .95s cubic-bezier(.22,.72,.25,1) both;
+    }
+
+    .embed-hero.is-animated .vine {
+      --base-transform: translateX(-50%);
+    }
+
+    .embed-hero.is-animated .port {
+      animation: slide-left 1.2s cubic-bezier(.22,.72,.25,1) 1.95s both;
+    }
+
+    .embed-hero.is-animated .folio {
+      animation: slide-right 1.2s cubic-bezier(.22,.72,.25,1) 3.15s both;
+    }
+
+    .embed-hero.is-animated .flourish-vertical {
+      animation: flourish-down .95s cubic-bezier(.45,.05,.25,1) 1.02s both;
+    }
+
+    .embed-hero.is-animated .flourish-tail {
+      animation: flourish-across .82s cubic-bezier(.35,.05,.2,1) 1.88s both;
+    }
+
+    @keyframes zoom-out {
+      from { opacity: 0; scale: 1.14; transform: var(--base-transform, none); }
+      to { opacity: 1; scale: 1; transform: var(--base-transform, none); }
+    }
+
+    @keyframes slide-left {
+      from { opacity: 0; translate: -90px 0; }
+      to { opacity: 1; translate: 0 0; }
+    }
+
+    @keyframes slide-right {
+      from { opacity: 0; translate: 90px 0; }
+      to { opacity: 1; translate: 0 0; }
+    }
+
+    @keyframes flourish-down {
+      from { clip-path: inset(0 0 100% 0); }
+      to { clip-path: inset(0 0 14% 0); }
+    }
+
+    @keyframes flourish-across {
+      from { clip-path: inset(70% 100% 0 0); }
+      to { clip-path: inset(70% 0 0 0); }
+    }
+
+    @keyframes type-caret { 50% { opacity: 0; } }
+
+    @media (max-width: 900px) {
+      :root {
+        --portrait-left: 29%;
+        --portrait-width: 42%;
+      }
+
+      .portrait-wrap { height: 430px; }
+      .hero-title { top: 215px; font-size: 106px; }
+      .port { right: calc(71% + var(--word-gap)); }
+      .folio { left: calc(71% + var(--word-gap)); }
+      .portrait-flourish {
+        top: 190px;
+        left: calc(var(--portrait-left) - 48px);
+        width: 260px;
+        height: 455px;
+      }
+      .signature { top: 600px; gap: 25px; font-size: 35px; }
+      .signature .name-arc { width: 32px; height: 64px; }
+      .intro { top: 680px; width: 90%; font-size: 16px; }
+    }
+
+    @media (max-width: 560px) {
+      :root {
+        --portrait-left: 18%;
+        --portrait-width: 64%;
+      }
+
+      .embed-hero {
+        height: 1000px;
+        border-bottom-left-radius: 50% 14%;
+        border-bottom-right-radius: 50% 14%;
+      }
+
+      .vine { top: 20px; width: min(350px, 90vw); }
+      .portrait-wrap { top: 150px; height: 385px; }
+      .hero-title { font-size: clamp(62px, 20vw, 80px); }
+      .hero-title span { top: 23px; left: 10px; }
+      .port { top: 95px; right: auto; left: 1%; }
+      .folio { top: 545px; right: 0; left: auto; }
+      .portrait-flourish {
+        top: 185px;
+        left: calc(var(--portrait-left) - 38px);
+        width: 220px;
+        height: 430px;
+      }
+      .signature { top: 610px; gap: 14px; font-size: 27px; }
+      .signature .name-arc { width: 25px; height: 50px; }
+      .intro {
+        top: 675px;
+        width: 90%;
+        max-width: 430px;
+        padding-inline: 8px;
+        font-size: 18px;
+        line-height: 1.18;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .embed-hero.is-animated .vine,
+      .embed-hero.is-animated .portrait-wrap,
+      .embed-hero.is-animated .port,
+      .embed-hero.is-animated .folio { animation: none; }
+      .embed-hero.is-animated .flourish-vertical {
+        animation: none;
+        clip-path: inset(0 0 14% 0);
+      }
+      .embed-hero.is-animated .flourish-tail {
+        animation: none;
+        clip-path: inset(70% 0 0 0);
+      }
+      .type-caret { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <section class="embed-hero is-animated" aria-labelledby="artist-name">
+    <div class="vine" aria-hidden="true"></div>
+    <div class="hero-title port" aria-hidden="true">PORT<span>PORT</span></div>
+    <div class="portrait-flourish" aria-hidden="true">
+      <img class="flourish-vertical" src="../../images/decor/portrait-flourish.png" alt="">
+      <img class="flourish-tail" src="../../images/decor/portrait-flourish.png" alt="">
+    </div>
+    <div class="portrait-wrap">
+      <img src="../../images/artist/alena-ursova.jpg" alt="Художник Алёна Урсова">
+    </div>
+    <div class="hero-title folio" aria-hidden="true">FOLIO<span>FOLIO</span></div>
+    <div class="signature" id="artist-name" aria-label="Алёна Урсова">
+      <img class="name-arc name-arc-left" src="../../images/decor/name-arc-left.png" alt="" hidden>
+      <span class="typed-name"></span>
+      <img class="name-arc name-arc-right" src="../../images/decor/name-arc-right.png" alt="" hidden>
+    </div>
+    <p class="intro" aria-label="Объединяющий творчество, эстетику и глубокое понимание визуального восприятия."><span class="typed-intro"></span></p>
+  </section>
+
+  <script>
+    (() => {
+      const artistName = "Алёна Урсова";
+      const intro = `Объединяющий творчество, эстетику и глубокое понимание визуального восприятия.
+В живопись я пришла по зову души. Я самоучка, и именно это позволило мне сохранить
+свободу самовыражения, интуитивный подход и уникальный авторский стиль.
+Каждая моя картина рождается через эмоции, внутренние состояния и энергию, которую я
+вкладываю в процесс создания.
+Для меня искусство — это не просто изображение, а способ передать настроение,
+вдохновение и свет.
+Мои работы наполнены особой энергетикой и созданы для того,
+чтобы приносить гармонию, красоту и глубокий отклик
+в сердце каждого зрителя.`;
+
+      const nameNode = document.querySelector(".typed-name");
+      const introNode = document.querySelector(".typed-intro");
+      const arcs = document.querySelectorAll(".name-arc");
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      const render = (node, value, cursor) => {
+        node.textContent = value;
+        if (cursor) {
+          const caret = document.createElement("i");
+          caret.className = "type-caret";
+          caret.setAttribute("aria-hidden", "true");
+          node.append(caret);
+        }
+      };
+
+      const typeText = (node, text, delay, duration, onStart) => {
+        if (reduceMotion) {
+          onStart?.();
+          render(node, text, false);
+          return;
+        }
+
+        const startAt = performance.now() + delay;
+        let started = false;
+        const tick = (now) => {
+          const progress = Math.min(1, Math.max(0, (now - startAt) / duration));
+          if (progress > 0 && !started) {
+            started = true;
+            onStart?.();
+          }
+          render(node, text.slice(0, Math.floor(progress * text.length)), progress > 0 && progress < 1);
+          if (progress < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      };
+
+      typeText(nameNode, artistName, 4450, 520, () => arcs.forEach((arc) => { arc.hidden = false; }));
+      typeText(introNode, intro, 5000, 1700);
+
+      const reportHeight = () => {
+        if (window.parent === window) return;
+        window.parent.postMessage({
+          type: "alena-hero-height",
+          height: document.documentElement.scrollHeight
+        }, "*");
+      };
+
+      window.addEventListener("load", reportHeight);
+      window.addEventListener("resize", reportHeight);
+      document.fonts?.ready.then(reportHeight);
+      reportHeight();
+    })();
+  </script>
+</body>
+</html>
