@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>«Девочка и гуси» — Алёна Урсова</title>
+  <style>
+    @font-face {
+      font-family: "Calibri Local";
+      src: url("../../fonts/calibri.ttf") format("truetype");
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Calibri Local";
+      src: url("../../fonts/calibri_bold.ttf") format("truetype");
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+    }
+
+    :root {
+      color-scheme: light;
+      --paper: #f7f7f4;
+      --ink: #181713;
+    }
+
+    * { box-sizing: border-box; }
+
+    html,
+    body {
+      margin: 0;
+      min-width: 320px;
+      overflow-x: clip;
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    body { font-family: "Calibri Local", Calibri, Arial, sans-serif; }
+
+    .artwork-block {
+      width: 100%;
+      background: var(--paper);
+    }
+
+    .artwork-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: clamp(48px, 6.2vw, 86px);
+      width: min(100%, 1366px);
+      margin-inline: auto;
+      padding: 72px clamp(42px, 7.5vw, 104px) 74px;
+    }
+
+    .column {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+    }
+
+    .heading {
+      margin: 0 0 8px;
+      font-size: clamp(36px, 3.1vw, 44px);
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .heading-rule {
+      position: relative;
+      width: min(370px, 72%);
+      height: 18px;
+      margin-bottom: 28px;
+      border-top: 2px solid currentColor;
+    }
+
+    .heading-rule span {
+      position: absolute;
+      top: -16px;
+      right: -8px;
+      padding-left: 8px;
+      background: var(--paper);
+      font-size: 19px;
+    }
+
+    .details {
+      margin: 0 0 42px;
+      font-size: clamp(21px, 1.8vw, 25px);
+      line-height: 1.05;
+    }
+
+    .copy {
+      font-size: clamp(16px, 1.35vw, 19px);
+      line-height: 1.08;
+    }
+
+    .copy p {
+      margin: 0 0 20px;
+      text-wrap: pretty;
+    }
+
+    .dropcap::first-letter {
+      float: left;
+      padding: 8px 8px 0 0;
+      font-size: clamp(62px, 5.4vw, 76px);
+      line-height: .66;
+    }
+
+    figure { margin: 0; }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .interior {
+      margin-top: 4px;
+      align-self: flex-end;
+    }
+
+    .painting {
+      width: min(100%, 500px);
+      margin-left: auto;
+    }
+
+    .right-copy { margin-top: 4px; }
+
+    @media (max-width: 900px) {
+      .artwork-layout {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 52px clamp(24px, 6vw, 54px) 56px;
+      }
+
+      .heading-rule { width: min(370px, 82%); }
+      .details { margin-bottom: 30px; }
+      .painting { width: 100%; margin: 0; }
+      .right-copy { margin-top: 4px; }
+    }
+
+    @media (max-width: 560px) {
+      .artwork-layout { padding: 36px 20px 42px; }
+      .heading { font-size: 34px; }
+      .heading-rule { margin-bottom: 22px; }
+      .details { font-size: 21px; }
+      .copy { font-size: 17px; line-height: 1.12; }
+      .copy p { margin-bottom: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <section class="artwork-block" aria-labelledby="geese-title">
+    <div class="artwork-layout">
+      <div class="column left-column">
+        <header>
+          <h1 class="heading" id="geese-title">«Девочка и гуси»</h1>
+          <div class="heading-rule" aria-hidden="true"><span>✦</span></div>
+          <p class="details">Холст на подрамнике, Лён<br>Масло<br>80 х 50 см.</p>
+        </header>
+
+        <div class="copy">
+          <p class="dropcap">Картина энергетически заряжена состоянием живого движения. Она словно говорит: «Не жди идеального момента. Иди.» перестань спрашивать разрешения у мира и просто иди туда, куда зовёт сердце.</p>
+          <p class="dropcap">Она напоминает, что жизнь не должна быть тяжёлой. Что можно выбирать радость. Можно доверять себе. Можно идти вперёд легко, даже если впереди неизвестность. Эта картина словно наполняет дом свежим воздухом.</p>
+        </div>
+
+        <figure class="interior">
+          <img src="../../images/interiors/devochka-i-gusi.jpg" alt="Картина «Девочка и гуси» в интерьере">
+        </figure>
+      </div>
+
+      <div class="column right-column">
+        <figure class="painting">
+          <img src="../../images/artworks/devochka-i-gusi.jpg" alt="Картина «Девочка и гуси» Алёны Урсовой">
+        </figure>
+
+        <div class="copy right-copy">
+          <p class="dropcap">При появлении этой картины дома, пространство начнет напоминать о том, что жизнь — это не борьба, а движение.</p>
+          <p class="dropcap">Она возвращает вкус к простым вещам, пробуждает вдохновение и помогает выйти из состояния «надо» в состояние «хочу».</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (() => {
+      const sendHeight = () => {
+        window.parent.postMessage({
+          type: "alena-geese-height",
+          height: document.documentElement.scrollHeight
+        }, "*");
+      };
+
+      window.addEventListener("load", sendHeight);
+      window.addEventListener("resize", sendHeight);
+      document.fonts?.ready.then(sendHeight);
+      document.querySelectorAll("img").forEach((image) => image.addEventListener("load", sendHeight));
+    })();
+  </script>
+</body>
+</html>
