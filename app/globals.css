@@ -103,7 +103,7 @@ main{overflow:clip}
 
 /* Keep display words anchored to the portrait on wide screens. */
 @media(min-width:901px){
-  .hero{--hero-word-gap:2px}
+  .hero{--hero-word-gap:9px}
   .port{left:auto;right:calc(66.5% + var(--hero-word-gap))}
   .folio{right:auto;left:calc(66.5% + var(--hero-word-gap))}
 }
@@ -157,9 +157,9 @@ main{width:100%;max-width:1366px;margin-inline:auto;overflow:visible}
   pointer-events:none;
 }
 .catalog{position:relative}
-.hero:before{
-  border-bottom-left-radius:50% 27%;
-  border-bottom-right-radius:50% 27%;
+.hero,.hero:before{
+  border-bottom-left-radius:0;
+  border-bottom-right-radius:0;
 }
 
 /* Static two-column portfolio spreads matching the PDF reference. */
@@ -222,12 +222,12 @@ main{width:100%;max-width:1366px;margin-inline:auto;overflow:visible}
 
 @media(max-width:560px){
   .hero{
-    border-bottom-left-radius:50% 14%;
-    border-bottom-right-radius:50% 14%;
+    border-bottom-left-radius:0;
+    border-bottom-right-radius:0;
   }
   .hero:before{
-    border-bottom-left-radius:50% 14%;
-    border-bottom-right-radius:50% 14%;
+    border-bottom-left-radius:0;
+    border-bottom-right-radius:0;
   }
   .intro{width:84%;max-width:430px;padding-inline:8px}
   .contacts{
