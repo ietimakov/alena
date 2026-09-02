@@ -269,7 +269,7 @@ main{width:100%;max-width:1366px;margin-inline:auto;overflow:visible}
 }
 
 @media(max-width:560px){
-  .hero{height:1000px}
+  .hero{height:1150px}
   .intro{top:680px}
   .catalog-work{height:740px;grid-template-rows:440px 150px 150px}
   .catalog-work img{height:440px}
