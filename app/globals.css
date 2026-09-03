@@ -322,3 +322,20 @@ body,button,input,textarea,select,
 @media(max-width:560px){
   .hero .intro{top:675px;width:90%;font-size:18px;line-height:1.18}
 }
+
+/* Keep the signature below the animated flourish and reserve room for the copy. */
+@media(min-width:901px){
+  .hero{height:1080px}
+  .hero .signature{top:735px}
+  .hero .intro{top:825px}
+}
+@media(min-width:561px) and (max-width:900px){
+  .hero{height:980px}
+  .hero .signature{top:650px}
+  .hero .intro{top:730px}
+}
+@media(max-width:560px){
+  .hero{height:1220px}
+  .hero .signature{top:635px}
+  .hero .intro{top:710px}
+}
