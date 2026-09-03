@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>«Царевна-лебедь» — Алёна Урсова</title>
+  <link rel="stylesheet" href="../artwork-grid.css">
+  <style>
+    .swan-grid {
+      grid-template-areas:
+        "painting main"
+        "secondary studio"
+        "interior closing";
+    }
+    .main { grid-area: main; }
+    .painting { grid-area: painting; }
+    .secondary { grid-area: secondary; }
+    .studio { grid-area: studio; }
+    .interior { grid-area: interior; }
+    .closing { grid-area: closing; }
+    @media (max-width: 900px) {
+      .swan-grid {
+        grid-template-areas:
+          "main"
+          "painting"
+          "secondary"
+          "studio"
+          "interior"
+          "closing";
+      }
+    }
+  </style>
+</head>
+<body class="theme-warm">
+  <section class="artwork-block" aria-labelledby="swan-title">
+    <div class="artwork-grid swan-grid">
+      <figure class="painting">
+        <img src="../../images/artworks/tsarevna-lebed.jpg" alt="Картина «Царевна-лебедь» Алёны Урсовой">
+      </figure>
+
+      <div class="panel main">
+        <h1 class="heading" id="swan-title">«Царевна-лебедь»</h1>
+        <div class="heading-rule" aria-hidden="true"><span>✦</span></div>
+        <p class="details">Холст на подрамнике, Лён<br>Масло<br>60 х 80 см.</p>
+        <div class="copy">
+          <p class="dropcap"><span class="initial">Э</span><span>та работа родилась из впечатления от старой чёрно-белой открытки с концертным номером «Царевна-лебедь». Мне хотелось сохранить в ней ощущение ушедшей эпохи — театральной фотографии, сценического образа, застывшего на мгновение движения, — но увидеть этот сюжет уже своими глазами, в цвете и фактуре живописи.</span></p>
+          <p class="dropcap"><span class="initial">М</span><span>не было важно не просто воспроизвести старый сценический образ, а переосмыслить его через живописную материю. Поэтому здесь так много фактуры: мазки напоминают перья, старую театральную декорацию, отблески софитов и одновременно след времени. Тёмный фон словно поглощает сцену, оставляя героев в пространстве света.</span></p>
+        </div>
+      </div>
+
+      <div class="copy secondary">
+        <p class="dropcap"><span class="initial">В</span><span>центре композиции — танцовщица в образе лебедя. Её тело вытянуто в сложном, почти невесомом движении: одна нога устремляется вверх, руки и огромные крылья костюма раскрываются в пространстве. Перья становятся не просто частью костюма, а самостоятельной стихией — они окружают героиню, словно превращая её в настоящую птицу. Серебристо-белые, серые, золотистые и жемчужные оттенки переливаются в густых мазках, создавая ощущение движения даже в неподвижной картине.</span></p>
+        <p class="dropcap"><span class="initial">Р</span><span>ядом с ней — партнёр, словно удерживающий связь с землёй. Его фигура более графична и контрастна: чёрный, белый и золото костюма перекликаются с тёмным сценическим пространством. Он словно существует между реальностью и сказкой, сопровождая превращение танцовщицы в лебедя.</span></p>
+      </div>
+
+      <figure class="studio portrait-media">
+        <img src="../../images/interiors/tsarevna-lebed-studio.jpg" alt="Картина «Царевна-лебедь» в мастерской">
+      </figure>
+
+      <figure class="interior">
+        <img src="../../images/interiors/tsarevna-lebed-room.jpg" alt="Картина «Царевна-лебедь» в интерьере">
+      </figure>
+
+      <div class="copy closing">
+        <p class="dropcap"><span class="initial">Э</span><span>то моя версия «Царевны-лебедя» — не столько иллюстрация сказки, сколько воспоминание о театре, увиденное через старую открытку и заново пережитое в живописи. В ней соединяются хрупкость и сила, человеческое тело и образ птицы, память о прошлом и мой сегодняшний взгляд на этот образ.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (() => {
+      let request;
+      const sendHeight = () => {
+        cancelAnimationFrame(request);
+        request = requestAnimationFrame(() => window.parent.postMessage({
+          type: "alena-tsarevna-height",
+          height: document.documentElement.scrollHeight
+        }, "*"));
+      };
+      window.addEventListener("load", sendHeight);
+      window.addEventListener("resize", sendHeight);
+      document.fonts?.ready.then(sendHeight);
+      new ResizeObserver(sendHeight).observe(document.body);
+      sendHeight();
+    })();
+  </script>
+</body>
+</html>

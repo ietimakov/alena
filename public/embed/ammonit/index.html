@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>«Аммонит» — Алёна Урсова</title>
+  <link rel="stylesheet" href="../artwork-grid.css">
+  <style>
+    .ammonit-grid {
+      grid-template-areas:
+        "main painting"
+        "interior-dark secondary"
+        "closing interior-light";
+    }
+    .main { grid-area: main; }
+    .painting { grid-area: painting; }
+    .interior-dark { grid-area: interior-dark; }
+    .secondary { grid-area: secondary; }
+    .closing { grid-area: closing; }
+    .interior-light { grid-area: interior-light; }
+    @media (max-width: 900px) {
+      .ammonit-grid {
+        grid-template-areas:
+          "main"
+          "painting"
+          "secondary"
+          "interior-dark"
+          "closing"
+          "interior-light";
+      }
+    }
+  </style>
+</head>
+<body class="theme-paper">
+  <section class="artwork-block" aria-labelledby="ammonit-title">
+    <div class="artwork-grid ammonit-grid">
+      <div class="panel main">
+        <h1 class="heading" id="ammonit-title">«Аммонит»</h1>
+        <div class="heading-rule" aria-hidden="true"><span>✦</span></div>
+        <p class="details">Холст на подрамнике, Лён<br>Масло<br>100 х 80 см.</p>
+        <div class="copy">
+          <p class="dropcap"><span class="initial">К</span><span>артина предлагает не просто смотреть на изображение, а погружаться в него.</span></p>
+          <p class="dropcap"><span class="initial">Г</span><span>лубина раскрывается постепенно. Сначала взгляд воспринимает целостную форму, затем начинает следовать за спиралью, погружаясь всё глубже — от внешнего пространства к центру, от видимого к невидимому, от материи к смыслу.</span></p>
+          <p class="dropcap"><span class="initial">Э</span><span>та картина — путешествие внутрь себя, где цикличность времени становится пространством для расширения сознания, а глубина восприятия помогает увидеть суть происходящего.</span></p>
+        </div>
+      </div>
+
+      <figure class="painting">
+        <img src="../../images/artworks/ammonit.jpg" alt="Картина «Аммонит» Алёны Урсовой">
+      </figure>
+
+      <figure class="interior-dark">
+        <img src="../../images/interiors/ammonit-dark.jpg" alt="Картина «Аммонит» в тёмном интерьере">
+      </figure>
+
+      <div class="copy secondary">
+        <p class="dropcap"><span class="initial">Ц</span><span>икличность здесь не означает повторение. Каждый виток похож на предыдущий, но никогда не является его точной копией. Время возвращает нас к знакомым состояниям, однако каждый раз мы видим их уже из другой точки — с другой глубиной, другим опытом и другим взглядом.</span></p>
+        <p class="dropcap"><span class="initial">К</span><span>ак раковина аммонита хранит следы всех предыдущих витков роста, так и человек несёт в себе опыт прошлого, который формирует его настоящее и открывает путь в будущее.</span></p>
+      </div>
+
+      <div class="copy closing">
+        <p class="dropcap"><span class="initial">Э</span><span>та работа приглашает замедлиться и почувствовать: время не движется только вперёд — оно разворачивается по спирали. Мы возвращаемся к похожим событиям, но каждый раз воспринимаем их глубже, потому что изменились сами.</span></p>
+      </div>
+
+      <figure class="interior-light">
+        <img src="../../images/interiors/ammonit-light.jpg" alt="Картина «Аммонит» в светлом интерьере">
+      </figure>
+    </div>
+  </section>
+
+  <script>
+    (() => {
+      let request;
+      const sendHeight = () => {
+        cancelAnimationFrame(request);
+        request = requestAnimationFrame(() => window.parent.postMessage({
+          type: "alena-ammonit-height",
+          height: document.documentElement.scrollHeight
+        }, "*"));
+      };
+      window.addEventListener("load", sendHeight);
+      window.addEventListener("resize", sendHeight);
+      document.fonts?.ready.then(sendHeight);
+      new ResizeObserver(sendHeight).observe(document.body);
+      sendHeight();
+    })();
+  </script>
+</body>
+</html>
