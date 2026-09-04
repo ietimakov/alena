@@ -84,7 +84,7 @@ body,.contacts,.hero-title,.signature,.work-heading,.catalog-work h3,.contact-di
 .folio{right:2.3%}
 .contact-disc h2{font-size:96px;line-height:.9}
 @media(max-width:900px){.hero-title{font-size:106px;letter-spacing:0}.folio{right:1%}.contact-disc h2{font-size:78px}}
-@media(max-width:560px){.hero-title{font-size:80px;letter-spacing:0}.port{left:1%}.folio{right:0}.contact-disc h2{font-size:64px}}
+@media(max-width:560px){.hero-title{font-size:80px;letter-spacing:0}.port{left:1%}.folio{right:5px}.contact-disc h2{font-size:64px}}
 
 /* Portfolio-page parallax: each story sheet is covered by the next one. */
 @media(min-width:901px){
