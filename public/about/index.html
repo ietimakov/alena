@@ -60,7 +60,7 @@
       font-family: "Calibri Local", Calibri, Arial, sans-serif;
     }
 
-    img { display: block; width: 100%; }
+    img { display: block; width: 100%; border-radius: 15px; }
     a { color: inherit; }
 
     .shell {
@@ -78,13 +78,13 @@
     .hero-grid {
       display: grid;
       grid-template-columns: minmax(0, .92fr) minmax(360px, .72fr);
-      gap: clamp(42px, 7vw, 105px);
-      min-height: 780px;
+      gap: 64px;
+      min-height: 0;
       align-items: center;
-      padding: 76px clamp(38px, 8vw, 112px) 0;
+      padding: 120px clamp(38px, 8vw, 112px) 50px;
     }
 
-    .hero-copy { align-self: center; padding-bottom: 70px; }
+    .hero-copy { align-self: center; padding-bottom: 0; }
 
     .eyebrow {
       display: flex;
@@ -118,25 +118,31 @@
 
     .hero-photo {
       position: relative;
-      align-self: end;
-      height: auto;
+      align-self: center;
+      height: 440px;
     }
 
-    .hero-photo img { width: 100%; height: auto; }
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 43%;
+    }
 
     .vine {
       position: absolute;
-      top: 28px;
-      right: clamp(24px, 5vw, 78px);
-      width: min(390px, 34vw);
+      top: -70px;
+      left: 50%;
+      width: min(390px, 100%);
       height: 52px;
+      transform: translateX(-50%);
       background: url("../images/decor/vine.png") center / contain no-repeat;
       filter: brightness(0) invert(1);
       opacity: .92;
     }
 
     .section { position: relative; }
-    .section-inner { padding: clamp(78px, 9vw, 126px) clamp(38px, 8vw, 112px); }
+    .section-inner { padding: 50px clamp(38px, 8vw, 112px); }
     .paper { background: var(--soft); }
     .warm { background: var(--warm); }
     .olive { background: var(--olive); color: var(--white); }
@@ -171,14 +177,16 @@
     .intro-grid {
       display: grid;
       grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr);
-      gap: clamp(42px, 7vw, 96px);
-      align-items: start;
+      gap: 64px;
+      align-items: stretch;
     }
 
-    .landscape-frame { position: sticky; top: 24px; }
+    .landscape-frame { position: relative; top: auto; }
 
     .landscape-frame img {
-      height: auto;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 48%;
     }
 
     .prose { font-size: clamp(18px, 1.65vw, 22px); line-height: 1.44; }
@@ -195,9 +203,11 @@
     .education-grid {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(320px, .78fr);
-      gap: clamp(46px, 7vw, 96px);
+      gap: 64px;
       align-items: start;
     }
+
+    .education-photo { margin-top: 110px; }
 
     .education-photo img {
       height: auto;
@@ -224,7 +234,7 @@
     .journey-grid {
       display: grid;
       grid-template-columns: minmax(320px, .76fr) minmax(0, 1fr);
-      gap: clamp(48px, 8vw, 112px);
+      gap: 64px;
       align-items: center;
     }
 
@@ -255,7 +265,7 @@
     .language-grid {
       display: grid;
       grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr);
-      gap: clamp(46px, 8vw, 110px);
+      gap: 64px;
     }
 
     .language-lead {
@@ -314,7 +324,7 @@
     .texture-inner {
       display: grid;
       grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr);
-      gap: clamp(48px, 8vw, 110px);
+      gap: 64px;
       align-items: start;
     }
 
@@ -342,11 +352,12 @@
       .language-grid,
       .texture-inner { grid-template-columns: 1fr; }
 
-      .hero-grid { padding-top: 112px; }
+      .hero-grid { gap: 64px; padding-top: 120px; padding-bottom: 50px; }
       .hero-copy { padding-bottom: 0; }
-      .hero-photo { width: min(620px, 100%); height: auto; justify-self: center; }
-      .vine { right: 50%; width: min(390px, 78vw); transform: translateX(50%); }
+      .hero-photo { width: min(620px, 100%); height: 520px; justify-self: center; }
+      .vine { right: auto; left: 50%; width: min(390px, 78vw); transform: translateX(-50%); }
       .landscape-frame, .texture-title { position: relative; top: auto; }
+      .landscape-frame img { height: auto; object-fit: contain; }
       .education-photo { width: min(560px, 100%); margin-inline: auto; }
       .journey-photo { width: min(560px, 100%); margin-inline: auto; }
       .language-lead { padding: 36px; }
@@ -354,16 +365,17 @@
     }
 
     @media (max-width: 600px) {
-      .hero-grid { min-height: 0; gap: 44px; padding: 98px 20px 0; }
+      .hero-grid { min-height: 0; gap: 44px; padding: 120px 20px 50px; }
       .hero-lead { font-size: 28px; }
       .hero-note { font-size: 17px; }
-      .hero-photo { width: 100%; }
-      .section-inner { padding: 66px 20px; }
+      .hero-photo { width: 100%; height: 440px; }
+      .section-inner { padding: 50px 20px; }
       .section-heading { margin-bottom: 34px; font-size: 46px; }
       .rule { margin-bottom: 36px; }
       .prose { font-size: 18px; line-height: 1.4; }
       .study-card { grid-template-columns: 1fr; }
       .study-card time { grid-row: auto; grid-column: auto; }
+      .education-photo { margin-top: 0; }
       .journey-photo { padding: 0 0 20px 20px; }
       .journey-photo::before { inset: 20px 20px 0 0; }
       .language-lead { padding: 28px; }
@@ -377,7 +389,6 @@
 <body>
   <main>
     <section class="hero">
-      <div class="vine" aria-hidden="true"></div>
       <div class="hero-grid shell">
         <div class="hero-copy">
           <p class="eyebrow">Художник</p>
@@ -386,6 +397,7 @@
           <p class="hero-note">Меня всегда привлекала возможность через образ передавать чувства, настроение и собственное восприятие мира.</p>
         </div>
         <figure class="hero-photo">
+          <div class="vine" aria-hidden="true"></div>
           <img src="../images/about/alena-tree-portrait.jpg" alt="Художник Алёна Урсова у новогодней ёлки">
         </figure>
       </div>
