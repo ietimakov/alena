@@ -38,6 +38,14 @@
       font-display: swap;
     }
 
+    @font-face {
+      font-family: "Rochelle";
+      src: url("../fonts/rochelle.otf") format("opentype");
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+    }
+
     :root {
       color-scheme: light;
       --paper: #f3f1ed;
@@ -352,6 +360,127 @@
       line-height: 1.12;
     }
 
+    .about-contact {
+      position: relative;
+      min-height: 520px;
+      overflow: hidden;
+      background: #f3f3f3;
+    }
+
+    .about-contact-disc {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: min(610px, calc(100% - 36px));
+      height: 420px;
+      padding-top: 135px;
+      transform: translateX(-50%);
+      border-radius: 0 0 50% 50%;
+      background: var(--olive);
+      color: #fff;
+      text-align: center;
+    }
+
+    .about-contact-vine {
+      position: absolute;
+      top: 38px;
+      left: 50%;
+      width: min(430px, 82%);
+      height: 58px;
+      transform: translateX(-50%);
+      background: url("../images/decor/vine.png") center / contain no-repeat;
+      filter: brightness(.2);
+    }
+
+    .about-contact-title {
+      position: relative;
+      display: inline-grid;
+      justify-items: center;
+    }
+
+    .about-contact-title h2 {
+      margin: 0;
+      font: 400 96px/.9 "Rochelle", serif;
+      white-space: nowrap;
+    }
+
+    .about-contact-underline {
+      position: relative;
+      width: 92%;
+      height: 24px;
+      margin-top: 7px;
+      color: var(--ink);
+    }
+
+    .about-contact-underline::before {
+      content: "";
+      position: absolute;
+      top: 4px;
+      right: 0;
+      left: 0;
+      height: 18px;
+      transform: scaleX(0);
+      transform-origin: left center;
+      background: #fff;
+      clip-path: polygon(0 54%,14% 42%,29% 50%,45% 37%,62% 48%,79% 35%,100% 47%,100% 61%,79% 51%,62% 64%,45% 52%,29% 65%,14% 57%,0 68%);
+      animation: about-contact-stroke 3.5s ease-in-out infinite;
+    }
+
+    .about-contact-brush {
+      position: absolute;
+      z-index: 2;
+      top: -7px;
+      left: -10px;
+      width: 25px;
+      height: 25px;
+      filter: drop-shadow(0 2px 1px rgb(0 0 0 / 18%));
+      animation: about-contact-brush 3.5s ease-in-out infinite;
+    }
+
+    .about-contacts {
+      position: absolute;
+      top: 466px;
+      left: 50%;
+      display: flex;
+      width: min(1180px, calc(100% - 48px));
+      align-items: center;
+      justify-content: center;
+      gap: clamp(44px, 7vw, 110px);
+      transform: translateX(-50%);
+      font-size: 18px;
+    }
+
+    .about-contacts a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--ink);
+      text-decoration: none;
+      white-space: nowrap;
+      transition: color .2s ease, transform .2s ease;
+    }
+
+    .about-contacts svg {
+      width: 28px;
+      height: 28px;
+      flex: 0 0 28px;
+    }
+
+    .about-contacts a:hover { color: var(--olive); transform: translateY(-2px); }
+    .about-contacts a:focus-visible { outline: 2px solid var(--olive); outline-offset: 6px; }
+
+    @keyframes about-contact-stroke {
+      0% { transform: scaleX(0); opacity: 1; }
+      45%, 65% { transform: scaleX(1); opacity: 1; }
+      85%, 100% { transform: scaleX(1); opacity: 0; }
+    }
+
+    @keyframes about-contact-brush {
+      0% { left: -10px; opacity: 1; transform: rotate(-28deg); }
+      45% { left: calc(100% - 12px); opacity: 1; transform: rotate(-12deg); }
+      52%, 100% { left: calc(100% - 12px); opacity: 0; transform: rotate(-12deg); }
+    }
+
     @media (max-width: 900px) {
       .hero-grid,
       .intro-grid,
@@ -370,6 +499,37 @@
       .journey-photo { width: min(560px, 100%); margin-inline: auto; }
       .language-lead { padding: 36px; }
       .texture-inner { gap: 26px; }
+    }
+
+    @media (max-width: 700px) {
+      .about-contact { min-height: 400px; }
+
+      .about-contact-disc {
+        width: min(420px, calc(100% - 24px));
+        height: 390px;
+        padding-top: 65px;
+      }
+
+      .about-contact-vine {
+        top: 8px;
+        width: min(430px, 96%);
+        filter: none;
+      }
+
+      .about-contact-title h2 { font-size: clamp(50px, 15vw, 64px); }
+
+      .about-contacts {
+        top: 185px;
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+        padding-inline: 20px;
+        font-size: 14px;
+      }
+
+      .about-contacts a,
+      .about-contacts a:hover { color: #fff; }
+      .about-contacts svg { width: 24px; height: 24px; flex-basis: 24px; }
     }
 
     @media (max-width: 600px) {
@@ -391,6 +551,11 @@
       .features { grid-template-columns: 1fr; }
       .features li { min-height: 0; }
       .palette-copy { grid-template-columns: 1fr; margin-top: 42px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .about-contact-underline::before { animation: none; transform: none; opacity: 1; }
+      .about-contact-brush { left: calc(100% - 12px); animation: none; opacity: 1; transform: rotate(-12deg); }
     }
   </style>
 </head>
@@ -535,6 +700,36 @@
         </div>
       </div>
     </section>
+
+    <footer class="about-contact" aria-labelledby="about-contact-heading">
+      <div class="about-contact-disc">
+        <div class="about-contact-vine" aria-hidden="true"></div>
+        <div class="about-contact-title">
+          <h2 id="about-contact-heading">CONTACT ME</h2>
+          <div class="about-contact-underline" aria-hidden="true">
+            <svg class="about-contact-brush" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.7 14.8c1.5-1.6 4.2-1.8 5.8-.3 1.8 1.6 1.4 4.7-.3 6.2-1.8 1.7-5.3 1.8-8.4 1.1 1.7-1.1 2.1-2.5 2.2-3.8.1-1.2-.1-2.2.7-3.2Z"/>
+              <path d="m12.5 14.1 7.4-11c.7-1 .6-2.1-.1-2.7-.8-.6-1.9-.3-2.6.6l-7.5 11.2 2.8 1.9Z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <nav class="about-contacts" aria-label="Контакты Алёны Урсовой">
+        <a href="mailto:ursova.al@mail.ru" aria-label="Написать Алёне по электронной почте">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m4 7 8 6 8-6"/></svg>
+          <span>ursova.al@mail.ru</span>
+        </a>
+        <a href="https://wa.me/79613698369" target="_blank" rel="noopener noreferrer" aria-label="Написать Алёне в WhatsApp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.6A8.5 8.5 0 0 1 7.9 19l-4.4 1.3 1.4-4.2A8.5 8.5 0 1 1 20.5 11.6Z"/><path d="M8.2 7.7c.3-.4.6-.4.9-.1l1.2 1.7c.2.3.1.6-.1.9l-.7.8c.8 1.6 2 2.8 3.7 3.6l.8-.9c.2-.3.5-.3.8-.2l1.9.9c.3.2.4.5.3.8-.4 1.3-1.4 2-2.8 2-3.8-.4-7.7-4.4-8-8.1 0-.7.3-1.1.6-1.4Z"/></svg>
+          <span>8(961)369-8-369</span>
+        </a>
+        <a href="https://t.me/Alena_Ursova" target="_blank" rel="noopener noreferrer" aria-label="Написать Алёне в Telegram">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 3.3 18.4 20c-.2 1.2-.9 1.5-1.8.9l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6 13.8 1.2 12.3c-1.1-.3-1.1-1.1.2-1.6L20 3.5c.9-.3 1.7.2 1.6-.2Z"/></svg>
+          <span>@Alena_Ursova</span>
+        </a>
+      </nav>
+    </footer>
   </main>
 
   <script>
