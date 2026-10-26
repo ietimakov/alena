@@ -386,10 +386,11 @@
         if (window.parent === window) return;
         window.parent.postMessage({
           type: "alena-hero-height",
-          height: document.documentElement.scrollHeight
+          height: Math.ceil(document.querySelector(".embed-hero").getBoundingClientRect().height)
         }, "*");
       };
 
+      new ResizeObserver(reportHeight).observe(document.querySelector(".embed-hero"));
       window.addEventListener("load", reportHeight);
       window.addEventListener("resize", reportHeight);
       document.fonts?.ready.then(reportHeight);
