@@ -339,3 +339,9 @@ body,button,input,textarea,select,
   .hero .signature{top:635px}
   .hero .intro{top:710px}
 }
+
+/* Let the complete artist statement determine the section height. */
+.hero{height:auto;min-height:1080px;padding-top:825px;padding-bottom:50px}
+.hero .intro{position:relative;inset:auto;transform:none;margin:0 auto}
+@media(max-width:900px){.hero{min-height:980px;padding-top:730px}.hero .intro{top:auto}}
+@media(max-width:560px){.hero{min-height:1220px;padding-top:710px}.hero .intro{top:auto}}
