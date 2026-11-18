@@ -44,7 +44,7 @@ export function Hero() {
       <img className="flourish-vertical" src={assetPath("images/decor/portrait-flourish.png")} alt="" />
       <img className="flourish-tail" src={assetPath("images/decor/portrait-flourish.png")} alt="" />
     </div>
-    <div className="portrait-wrap"><img src={assetPath("images/artist/alena-ursova.jpg")} alt="Алёна Урсова" /></div>
+    <div className="portrait-wrap"><img src={assetPath("images/artist/alena-with-painting.jpg")} alt="Алёна Урсова рядом с картиной «Девочка и гуси»" style={{ objectPosition: "33% 65%" }} /></div>
     <div className="hero-title folio">FOLIO<span>FOLIO</span></div>
     <div className={`signature typewriter ${typedName ? "has-content" : ""}`} aria-label={name}>
       {typedName && <img className="name-arc" src={assetPath("images/decor/name-arc-left.png")} alt="" aria-hidden="true" />}
