@@ -127,14 +127,15 @@
     .hero-photo {
       position: relative;
       align-self: center;
-      height: 440px;
     }
 
     .hero-photo img {
       width: 100%;
-      height: 100%;
+      height: auto;
+      min-height: 440px;
+      aspect-ratio: 5 / 6;
       object-fit: cover;
-      object-position: center 43%;
+      object-position: center 94%;
     }
 
     .vine {
@@ -193,6 +194,7 @@
       position: relative;
       top: auto;
       min-height: 0;
+      aspect-ratio: 1;
       overflow: hidden;
       border-radius: 15px;
     }
@@ -202,7 +204,7 @@
       inset: 0;
       height: 100%;
       object-fit: cover;
-      object-position: center bottom;
+      object-position: center 80%;
     }
 
     .prose { font-size: clamp(18px, 1.65vw, 22px); line-height: 1.44; }
@@ -491,9 +493,10 @@
 
       .hero-grid { gap: 64px; padding-top: 120px; padding-bottom: 50px; }
       .hero-copy { padding-bottom: 0; }
-      .hero-photo { width: min(620px, 100%); height: 520px; justify-self: center; }
+      .hero-photo { width: min(440px, 100%); justify-self: center; }
       .vine { right: auto; left: 50%; width: min(390px, 78vw); transform: translateX(-50%); }
       .landscape-frame, .texture-title { position: relative; top: auto; }
+      .landscape-frame { aspect-ratio: auto; }
       .landscape-frame img { position: relative; inset: auto; height: auto; object-fit: contain; }
       .education-photo { width: min(560px, 100%); margin-inline: auto; }
       .journey-photo { width: min(560px, 100%); margin-inline: auto; }
@@ -536,7 +539,7 @@
       .hero-grid { min-height: 0; gap: 44px; padding: 120px 20px 50px; }
       .hero-lead { font-size: 28px; }
       .hero-note { font-size: 17px; }
-      .hero-photo { width: 100%; height: 440px; }
+      .hero-photo { width: min(380px, 100%); }
       .section-inner { padding: 50px 20px; }
       .section-heading { margin-bottom: 34px; font-size: 46px; }
       .rule { margin-bottom: 36px; }
@@ -571,7 +574,7 @@
         </div>
         <figure class="hero-photo">
           <div class="vine" aria-hidden="true"></div>
-          <img src="../images/about/alena-tree-portrait.jpg" alt="Художник Алёна Урсова у новогодней ёлки">
+          <img src="../images/about/portrait-with-geese.jpg" alt="Алёна Урсова рядом с картиной «Девочка и гуси»" width="853" height="1280">
         </figure>
       </div>
     </section>
@@ -579,7 +582,7 @@
     <section class="section paper">
       <div class="section-inner shell intro-grid">
         <figure class="landscape-frame">
-          <img src="../images/about/alena-restaurant-seated.jpg" alt="Алёна Урсова в интерьере ресторана">
+          <img src="../images/about/portrait-at-easel.jpg" alt="Алёна Урсова у мольберта с картиной" width="853" height="1280">
         </figure>
         <div class="prose">
           <p class="dropcap">Мой профессиональный путь начался с дизайна и маркетинга, я занималась графическим и видеодизайном, созданием фирменной полиграфии и сайтов, работала с визуальной коммуникацией и проводила маркетинговые исследования компаний.</p>
@@ -616,7 +619,7 @@
           </div>
         </div>
         <figure class="education-photo">
-          <img src="../images/about/alena-restaurant-portrait.jpg" alt="Портрет Алёны Урсовой">
+          <img src="../images/about/paints-and-brush.jpg" alt="Кисть и тюбики с краской в руках Алёны Урсовой" width="853" height="1280">
         </figure>
       </div>
     </section>
@@ -624,7 +627,7 @@
     <section class="section warm">
       <div class="section-inner shell journey-grid">
         <figure class="journey-photo">
-          <img src="../images/about/alena-white-dress.jpg" alt="Алёна Урсова в белом платье">
+          <img src="../images/about/portrait-on-terrace.jpg" alt="Чёрно-белый портрет Алёны Урсовой на террасе" width="853" height="1280">
         </figure>
         <div>
           <h2 class="section-heading">Путь в живопись</h2>
