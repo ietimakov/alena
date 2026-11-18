@@ -187,22 +187,17 @@
       display: grid;
       grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr);
       gap: 64px;
-      align-items: stretch;
+      align-items: start;
     }
 
     .landscape-frame {
-      position: relative;
-      top: auto;
-      min-height: 0;
-      aspect-ratio: 1;
-      overflow: hidden;
-      border-radius: 15px;
+      width: min(100%, 400px);
+      margin: 0;
     }
 
     .landscape-frame img {
-      position: absolute;
-      inset: 0;
-      height: 100%;
+      height: auto;
+      aspect-ratio: 4 / 5;
       object-fit: cover;
       object-position: center 80%;
     }
@@ -495,9 +490,8 @@
       .hero-copy { padding-bottom: 0; }
       .hero-photo { width: min(440px, 100%); justify-self: center; }
       .vine { right: auto; left: 50%; width: min(390px, 78vw); transform: translateX(-50%); }
-      .landscape-frame, .texture-title { position: relative; top: auto; }
-      .landscape-frame { aspect-ratio: auto; }
-      .landscape-frame img { position: relative; inset: auto; height: auto; object-fit: contain; }
+      .texture-title { position: relative; top: auto; }
+      .landscape-frame img { aspect-ratio: auto; }
       .education-photo { width: min(560px, 100%); margin-inline: auto; }
       .journey-photo { width: min(560px, 100%); margin-inline: auto; }
       .language-lead { padding: 36px; }
